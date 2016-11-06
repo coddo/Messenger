@@ -29,12 +29,12 @@ namespace Messenger.Config
         /// <summary>
         /// The time to wait before starting the actual simulation
         /// </summary>
-        public TimeSpan DelayBeforeSimulationStarts { get; set; } = TimeSpan.FromSeconds(3);
+        public TimeSpan DelayBeforeSimulationStarts { get; set; } = TimeSpan.FromSeconds(2);
 
         /// <summary>
         /// Maximum number of messages that the queue can contains
         /// </summary>
-        public int MaxQueueMessages { get; set; } = 10000000;
+        public int MaxQueueMessages { get; set; } = 50000;
 
         /// <summary>
         /// The maximum time a topic stays active before it gets invalidated
