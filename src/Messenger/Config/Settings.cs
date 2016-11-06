@@ -34,7 +34,7 @@ namespace Messenger.Config
         /// <summary>
         /// Maximum number of messages that the queue can contains
         /// </summary>
-        public int MaxQueueMessages { get; set; } = 1000;
+        public int MaxQueueMessages { get; set; } = 10000000;
 
         /// <summary>
         /// The maximum time a topic stays active before it gets invalidated

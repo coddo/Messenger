@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
@@ -65,7 +66,7 @@ namespace Messenger
                 cancellationTokenSource.Cancel(false);
 
                 // Confirm simulation end
-                await Task.Delay(100).ConfigureAwait(false);
+                await Task.Delay(TimeSpan.FromSeconds(2)).ConfigureAwait(false);
                 Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}The simulation ended. Press any key to exit...");
             }
             finally
@@ -90,7 +91,7 @@ namespace Messenger
                 try
                 {
                     DateTime expireDate;
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         expireDate = i % 3 == 0 ? DateTime.Now.AddSeconds(3) : DateTime.Now.AddSeconds(50);
 
@@ -103,7 +104,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -117,7 +118,7 @@ namespace Messenger
                 try
                 {
                     DateTime expireDate;
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         expireDate = i % 3 == 0 ? DateTime.Now.AddSeconds(3) : DateTime.Now.AddSeconds(50);
 
@@ -130,7 +131,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -145,7 +146,7 @@ namespace Messenger
                 try
                 {
                     DateTime expireDate;
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         expireDate = i % 3 == 0 ? DateTime.Now.AddSeconds(3) : DateTime.Now.AddSeconds(50);
 
@@ -158,7 +159,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -172,7 +173,7 @@ namespace Messenger
             {
                 try
                 {
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         try
                         {
@@ -183,7 +184,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -196,7 +197,7 @@ namespace Messenger
             {
                 try
                 {
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         try
                         {
@@ -207,7 +208,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -220,7 +221,7 @@ namespace Messenger
             {
                 try
                 {
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         try
                         {
@@ -231,7 +232,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -244,7 +245,7 @@ namespace Messenger
             {
                 try
                 {
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         try
                         {
@@ -255,7 +256,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -268,7 +269,7 @@ namespace Messenger
             {
                 try
                 {
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         try
                         {
@@ -279,7 +280,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -292,7 +293,7 @@ namespace Messenger
             {
                 try
                 {
-                    for (var i = 0; i < 350; i++)
+                    for (var i = 0; i < 1000000; i++)
                     {
                         try
                         {
@@ -303,7 +304,7 @@ namespace Messenger
                             Console.WriteLine($"[SERVER ERROR RESPONSE] {ex.Message}");
                         }
 
-                        await Task.Delay(50, cancellationToken).ConfigureAwait(false);
+                        await Task.Delay(0, cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (TaskCanceledException)
@@ -315,17 +316,20 @@ namespace Messenger
             // Start the simulation Tasks
             try
             {
-                Parallel.Invoke(
-                    () => topicsTask1.Invoke(),
-                    () => topicsTask2.Invoke(),
-                    () => topicsTask3.Invoke(),
-                    () => messageTask12.Invoke(),
-                    () => messageTask13.Invoke(),
-                    () => messageTask21.Invoke(),
-                    () => messageTask23.Invoke(),
-                    () => messageTask31.Invoke(),
-                    () => messageTask32.Invoke()
-                );
+                var tasks = new List<Task>
+                {
+                    Task.Run(() => topicsTask1.Invoke(), cancellationToken),
+                    Task.Run(() => topicsTask2.Invoke(), cancellationToken),
+                    Task.Run(() => topicsTask3.Invoke(), cancellationToken),
+                    Task.Run(() => messageTask12.Invoke(), cancellationToken),
+                    Task.Run(() => messageTask13.Invoke(), cancellationToken),
+                    Task.Run(() => messageTask21.Invoke(), cancellationToken),
+                    Task.Run(() => messageTask23.Invoke(), cancellationToken),
+                    Task.Run(() => messageTask31.Invoke(), cancellationToken),
+                    Task.Run(() => messageTask32.Invoke(), cancellationToken)
+                };
+
+                Task.WaitAll(tasks.ToArray());
             }
             catch (TaskCanceledException)
             {
